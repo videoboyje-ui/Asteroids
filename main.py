@@ -1,6 +1,7 @@
 import pygame
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 from logger import log_state
+import player
 
 def main():
     pygame.init()
@@ -23,8 +24,10 @@ def main():
                 return
         
         screen.fill("black")
-        pygame.display.flip()
         dt = G_clock.tick(60) / 1000
+        ship = player.Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+        ship.draw(screen)
+        pygame.display.flip()
 
 if __name__ == "__main__":
     main()
