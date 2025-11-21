@@ -13,7 +13,7 @@ def main():
     # Game Setup
     G_clock = pygame.time.Clock()
     dt = 0
-    
+    ship = player.Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     
     # Game loop
     while True:
@@ -25,7 +25,7 @@ def main():
         
         screen.fill("black")
         dt = G_clock.tick(60) / 1000
-        ship = player.Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+        ship.update(dt)
         ship.draw(screen)
         pygame.display.flip()
 
